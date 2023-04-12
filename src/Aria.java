@@ -5,16 +5,15 @@ import java.util.HashMap;
 
 public class Aria {
 
-
     private double pressione;
 
-    private double tempeatura;
+    private double temperatura;
     private double densita;
 
 
-    public Aria(double pressione, double tempeatura, double densita) {
+    public Aria(double pressione, double temperatura, double densita) {
         this.pressione = pressione;
-        this.tempeatura = tempeatura;
+        this.temperatura = temperatura;
         this.densita = densita;
     }
 
@@ -53,12 +52,12 @@ public class Aria {
         this.pressione = pressione;
     }
 
-    public double getTempeatura() {
-        return tempeatura;
+    public double getTemperatura() {
+        return temperatura;
     }
 
-    public void setTempeatura(double tempeatura) {
-        this.tempeatura = tempeatura;
+    public void setTemperatura(double temperatura) {
+        this.temperatura = temperatura;
     }
 
     public double getDensita() {
@@ -102,8 +101,8 @@ public class Aria {
     private double intepolazioneTemperatura(HashMap<Integer, Aria> integerAriaHashMap, Integer quota, int quota1, int quota2) {
 
         //temperatura
-        double tempeatura1 = integerAriaHashMap.get(quota1).getTempeatura();
-        double tempeatura2 = integerAriaHashMap.get(quota2).getTempeatura();
+        double tempeatura1 = integerAriaHashMap.get(quota1).getTemperatura();
+        double tempeatura2 = integerAriaHashMap.get(quota2).getTemperatura();
 
         double k = ((tempeatura2 - tempeatura1) / (quota2 - quota1));
         return k * quota - k * quota1 + tempeatura1;
@@ -129,5 +128,12 @@ public class Aria {
         return k * quota - k * quota1 + densita1;
     }
 
-
+    @Override
+    public String toString() {
+        return "Aria{" +
+                "pressione=" + pressione +
+                ", temperatura=" + temperatura +
+                ", densità=" + densita +
+                '}';
+    }
 }

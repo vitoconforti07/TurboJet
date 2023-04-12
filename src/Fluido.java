@@ -24,9 +24,9 @@ public class Fluido extends Aria {
     public String toString() {
 
         return "Fluido { " +
-                "velocita = " + velocita + " m/s" +
+                "velocità = " + velocita + " m/s" +
                 ", pressione = " + getPressione() +" Pa"  +
-                ", tempeatura = " + getTempeatura() + " K" +
+                ", temperatura = " + getTemperatura() + " K" +
                 ", densita = " + getDensita() + " Kg/m3" +
                 '}';
     }
